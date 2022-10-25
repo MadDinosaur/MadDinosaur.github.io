@@ -5,6 +5,12 @@
   max-width: 1000px;
   position: relative;
   margin: auto;
+  transition: all 0.2s;
+}
+
+.slideshow-container:hover {
+  transition: all 0.2s;
+	transform: scale(1.05);
 }
 
 /* Hide the images by default */

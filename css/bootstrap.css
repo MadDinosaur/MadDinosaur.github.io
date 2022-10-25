@@ -583,6 +583,7 @@ h6,
   padding-bottom: 9px;
   margin: 40px 0 20px;
   border-bottom: 1px solid #eeeeee;
+  font-family: 'Pixel Fill', fantasy;
 }
 
 ul,
@@ -2236,9 +2237,9 @@ textarea.input-lg {
 }
 
 .btn {
-  background-color: DodgerBlue;
+  background-color: white;
   display: inline-block;
-  color: white;
+  color: #252829;
   padding: 12px 30px;
   margin-bottom: 0;
   font-size: 20px;
@@ -2633,12 +2634,6 @@ input[type="button"].btn-block {
   overflow: hidden;
   -webkit-transition: height 0.35s ease;
           transition: height 0.35s ease;
-}
-
-@font-face {
-  font-family: 'Glyphicons Halflings';
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
 .glyphicon {

@@ -1,0 +1,95 @@
+@font-face {
+	font-family: 'Pixel No-Fill';
+	src: url('../fonts/8-bit Arcade Out.ttf');
+}
+
+@font-face {
+	font-family: 'Pixel Fill';
+	src: url('../fonts/8-bit Arcade In.ttf');
+  }
+
+body {
+	margin-top: 50px;
+	/* 50px is the height of the navbar - change this if the navbarn height changes */
+}
+
+.portfolio-item {
+	margin-bottom: 25px;
+}
+
+footer {
+	margin: 50px 0;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+	flex: 50%;
+	padding: 0 4px;
+}
+
+.column img {
+	margin-top: 8px;
+	vertical-align: middle;
+}
+
+.event-logo {
+	transition: all 0.2s;
+	margin-right: 10px;
+}
+
+.event-logo:hover {
+	filter: drop-shadow(1px 1px 3px rgba(255,255,255,1));
+	transition: all 0.2s;
+	transform: scale(1.1);
+}
+
+.github-logo {
+	filter: invert(100%);
+	transition: all 0.2s;
+	margin-right: 10px;
+	float:right;
+}
+
+.github-logo:hover {
+	filter: drop-shadow(1px 1px 3px rgba(255,255,255,1));
+	transition: all 0.2s;
+	transform: scale(1.1);
+}
+
+.itchio-logo {
+	filter: invert(100%);
+	transition: all 0.2s;
+	margin-right: 10px;
+	float: right;
+}
+
+.itchio-logo:hover {
+	filter: drop-shadow(1px 1px 3px rgba(255,255,255,1));
+	transition: all 0.2s;
+	transform: scale(1.1);
+}
+
+.play-btn {
+	font-size: 30px;
+	font-family: 'Pixel No-Fill', fantasy;
+	color: white;
+	transition: all 0.2s;
+	padding-right: 12px;
+}
+
+.play-btn:hover {
+	transition: all 0.2s;
+	transform: scale(1.1);
+	text-decoration: none;
+}
+
+.project-title {
+	font-family: 'Pixel Fill', fantasy;
+	font-size: 30px;
+}
