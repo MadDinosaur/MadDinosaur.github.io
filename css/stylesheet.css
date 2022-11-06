@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'Pixel No-Fill';
-	src: url('../fonts/8-bit Arcade Out.ttf');
+	src: url('../fonts/3Dventure.ttf');
 }
 
 @font-face {
@@ -8,9 +8,9 @@
 	src: url('../fonts/8-bit Arcade In.ttf');
   }
 
-body {
-	margin-top: 50px;
-	/* 50px is the height of the navbar - change this if the navbarn height changes */
+  @font-face {
+    font-family: 'Press Start 2P';
+    src: url('../fonts/PressStart2P-Regular.ttf');
 }
 
 .portfolio-item {
@@ -76,7 +76,7 @@ footer {
 }
 
 .play-btn {
-	font-size: 30px;
+	font-size: 25px;
 	font-family: 'Pixel No-Fill', fantasy;
 	color: white;
 	transition: all 0.2s;
@@ -92,4 +92,99 @@ footer {
 .project-title {
 	font-family: 'Pixel Fill', fantasy;
 	font-size: 30px;
+}
+
+
+
+
+.title {
+	font-family: 'Pixel No-Fill', fantasy;
+	font-size: 100px;
+	text-align: center;
+}
+
+.subtitle {
+	font-family: 'Pixel Fill', fantasy;
+	font-size: 50px;
+	color: grey;
+	text-align: center;
+}
+
+.option {
+	font-family: 'Pixel Fill', fantasy;
+	font-size: 20px;
+	text-align: center;
+}
+
+.nav-button {
+	display: none;
+	width: 20px;
+	height: 20px;
+	filter: invert(100%);
+}
+
+.nav-text {
+	color: white;
+}
+
+.nav-text:hover + .nav-button{
+	color: white;
+	text-decoration: none;
+	display: block;
+}
+
+.scanlines {
+    pointer-events: none;
+    width: 135%;
+    height: 135%;
+    position: fixed;
+    left: -10%;
+    top: -10%;
+    z-index: 7;
+
+    background: -webkit-repeating-linear-gradient(top,
+            transparent 0px,
+            transparent 2px,
+            rgba(0, 0, 0, 0.55) 0px,
+            rgba(0, 0, 0, 0.15) 4px);
+    -webkit-background-size: 100% 4px;
+
+    background: -moz-repeating-linear-gradient(top,
+            transparent 0px,
+            transparent 2px,
+            rgba(0, 0, 0, 0.55) 0px,
+            rgba(0, 0, 0, 0.15) 4px);
+    -moz-background-size: 100% 4px;
+}
+
+.flash {
+    animation-name: flash;
+    animation-duration: 1s;
+    animation-timing-function: step-end;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes flash {
+    0% {
+        background-color: white;
+        color: darkslategray;
+    }
+
+    50% {
+        background-color: initial;
+        color: white;
+    }
+}
+
+#back-btn {
+	font-family: 'Press Start 2P', 'Pixel Fill', fantasy;
+	font-size: 32px;
+	margin-left: 8%;
+	text-decoration: none;
+}
+
+#footer-cpyright {
+	font-family: 'Press Start 2P', 'Pixel Fill', fantasy;
+	margin-left: 54%;
 }

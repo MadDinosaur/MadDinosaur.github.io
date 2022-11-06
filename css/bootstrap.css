@@ -551,7 +551,7 @@ h6 .small {
 
 h1,
 .h1 {
-  font-size: 36px;
+  font-size: 32px;
 }
 
 h2,
@@ -583,7 +583,7 @@ h6,
   padding-bottom: 9px;
   margin: 40px 0 20px;
   border-bottom: 1px solid #eeeeee;
-  font-family: 'Pixel Fill', fantasy;
+  font-family: 'Press Start 2P', 'Pixel Fill', fantasy;
 }
 
 ul,

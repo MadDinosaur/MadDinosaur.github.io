@@ -1,0 +1,247 @@
+@font-face {
+  font-family: "Pixel No-Fill";
+  src: url("../fonts/3Dventure.ttf");
+}
+@font-face {
+  font-family: "Pixel Fill";
+  src: url("../fonts/8-bit Arcade In.ttf");
+}
+@font-face {
+  font-family: "Press Start 2P";
+  src: url("../fonts/PressStart2P-Regular.ttf");
+}
+body {
+  background-color: #252829;
+  font-family: "Press Start 2P", "Pixel Fill", fantasy;
+  color: white;
+}
+
+.container {
+  position: fixed;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 20px;
+  width: 900px;
+  min-width: 900px;
+  height: 600px;
+  border: 8px dashed white;
+}
+
+#wrapper {
+  width: 900px;
+  min-width: 900px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 68px;
+  z-index: 5;
+  transition: all 8s ease;
+}
+
+header {
+  width: 600px;
+  margin: 0 auto 60px auto;
+  border-bottom: 4px solid white;
+}
+
+h1 {
+  font-size: 68px;
+  text-align: center;
+  text-shadow: 5px 5px darkslategray;
+}
+
+.menu {
+  margin: 30px auto 0 auto;
+  width: 100%;
+}
+
+#main {
+  display: initial;
+}
+
+#ABOUT_ME {
+  display: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  width: 100%;
+  float: left;
+  font-size: 32px;
+  text-align: center;
+  padding-bottom: 60px;
+}
+
+#description {
+  font-size: 20px;
+  padding-bottom: 38px;
+}
+
+footer {
+  float: right;
+  margin: 28px 40px 0 0;
+  height: 100px;
+}
+
+footer a:hover {
+  cursor: pointer;
+  color: darkslategray;
+}
+
+a {
+  text-decoration: none !important;
+  color: white;
+}
+
+.flash {
+  -webkit-animation-name: flash;
+          animation-name: flash;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: step-end;
+          animation-timing-function: step-end;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes flash {
+  0% {
+    background-color: white;
+    color: darkslategray;
+  }
+  50% {
+    background-color: initial;
+    color: white;
+  }
+}
+
+@keyframes flash {
+  0% {
+    background-color: white;
+    color: darkslategray;
+  }
+  50% {
+    background-color: initial;
+    color: white;
+  }
+}
+.scanlines {
+  pointer-events: none;
+  width: 135%;
+  height: 135%;
+  position: fixed;
+  left: -10%;
+  top: -10%;
+  z-index: 7;
+  background: -webkit-repeating-linear-gradient(top, transparent 0px, transparent 2px, rgba(0, 0, 0, 0.55) 0px, rgba(0, 0, 0, 0.15) 4px);
+  -webkit-background-size: 100% 4px;
+  background: -moz-repeating-linear-gradient(top, transparent 0px, transparent 2px, rgba(0, 0, 0, 0.55) 0px, rgba(0, 0, 0, 0.15) 4px);
+  -moz-background-size: 100% 4px;
+}
+
+canvas {
+  filter: url(#goo);
+}
+
+.typed-out {
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-animation: typing 1s steps(20, end) forwards;
+          animation: typing 1s steps(20, end) forwards;
+  font-size: 14px;
+  width: 0;
+}
+
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.bubble {
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+  text-align: center;
+  font-family: "Press Start 2P", cursive;
+  font-size: 16px;
+  line-height: 1.3em;
+  background-color: #fff;
+  color: #000;
+  padding: 12px;
+  box-shadow: 0 -4px #fff, 0 -8px #000, 4px 0 #fff, 4px -4px #000, 8px 0 #000, 0 4px #fff, 0 8px #000, -4px 0 #fff, -4px 4px #000, -8px 0 #000, -4px -4px #000, 4px 4px #000;
+  box-sizing: border-box;
+  width: 200px;
+}
+.bubble::after {
+  content: "";
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+}
+.bubble.shadow {
+  box-shadow: 0 -4px #fff, 0 -8px #000, 4px 0 #fff, 4px -4px #000, 8px 0 #000, 0 4px #fff, 0 8px #000, -4px 0 #fff, -4px 4px #000, -8px 0 #000, -4px -4px #000, 4px 4px #000, 4px 12px rgba(0, 0, 0, 0.1), 12px 4px rgba(0, 0, 0, 0.1), 8px 8px rgba(0, 0, 0, 0.1);
+}
+.bubble.mini {
+  width: 110px;
+  font-size: 16px;
+  padding: 4px;
+  font-family: monospace;
+}
+.bubble.medium {
+  width: 350px;
+}
+.bubble.large {
+  width: 560px;
+  font-size: 24px;
+  text-align: left;
+  text-transform: uppercase;
+}
+.bubble.grow {
+  width: initial;
+}
+.bubble.top::after {
+  height: 4px;
+  width: 4px;
+  top: -8px;
+  left: 32px;
+  box-shadow: 0 -4px #000, 0 -8px #000, 0 -12px #000, 0 -16px #000, -4px -12px #000, -8px -8px #000, -12px -4px #000, -4px -4px #fff, -8px -4px #fff, -4px -8px #fff, -4px 0 #fff, -8px 0 #fff, -12px 0 #fff;
+}
+.bubble.right::after {
+  height: 4px;
+  width: 4px;
+  top: 84px;
+  right: -8px;
+  background: white;
+  box-shadow: 4px -4px #fff, 4px 0 #fff, 8px 0 #fff, 0 -8px #fff, 4px 4px #000, 8px 4px #000, 12px 4px #000, 16px 4px #000, 12px 0 #000, 8px -4px #000, 4px -8px #000, 0 -4px #fff;
+}
+.bubble.bottom::after {
+  height: 4px;
+  width: 4px;
+  bottom: -8px;
+  left: 32px;
+  box-shadow: 0 4px #000, 0 8px #000, 0 12px #000, 0 16px #000, -4px 12px #000, -8px 8px #000, -12px 4px #000, -4px 4px #fff, -8px 4px #fff, -4px 8px #fff, -4px 0 #fff, -8px 0 #fff, -12px 0 #fff;
+}
+.bubble.left::after {
+  height: 4px;
+  width: 4px;
+  top: 20px;
+  left: -8px;
+  background: white;
+  box-shadow: -4px -4px #fff, -4px 0 #fff, -8px 0 #fff, 0 -8px #fff, -4px 4px #000, -8px 4px #000, -12px 4px #000, -16px 4px #000, -12px 0 #000, -8px -4px #000, -4px -8px #000, 0 -4px #fff;
+}/*# sourceMappingURL=arcade-game.css.map */
