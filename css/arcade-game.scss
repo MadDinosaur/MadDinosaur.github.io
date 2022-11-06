@@ -328,3 +328,20 @@ $bubble-border: 0 -1*$px $white,
             0 -1*$px $white;
     }
 }
+
+.instructions-nav {
+    display: inline;
+    margin-left: 1.5%;
+}
+
+.instructions-sel {
+    display: inline;
+    float: right;
+    margin-right: 1.5%;
+}
+
+.instructions-icon{
+    margin-left: 1.5%;
+    margin-top: 30px;
+	width: 60px;
+}
