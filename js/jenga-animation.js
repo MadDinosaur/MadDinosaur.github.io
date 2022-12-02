@@ -36,15 +36,15 @@ function dragElement(element, target) {
     y = 0, _y = 0
   element.forEach(el => {
     el.style.cursor = 'pointer'
-    el.onmousedown = dragMouseDown
+    el.onpointerdown = dragMouseDown
   })
   function dragMouseDown(event) {
     event = event || window.event
     event.preventDefault()
     _x = event.clientX
     _y = event.clientY
-    document.onmouseup = closeDragElement
-    document.onmousemove = elementDrag
+    document.onpointerup = closeDragElement
+    document.onpointermove = elementDrag
   }
   function elementDrag(event) {
     event = event || window.event
@@ -57,7 +57,7 @@ function dragElement(element, target) {
     target.style.left = (target.offsetLeft - x) + "px"
   }
   function closeDragElement() {
-    document.onmouseup = null
-    document.onmousemove = null
+    document.onpointerup = null
+    document.onpointermove = null
   }
 }
