@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #0C0C0C;
+  font: 300 1em "Fira Sans", sans-serif;
+}
+
+#jenga {
+  position: absolute;
+}
+
+.plank__container {
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 50%;
+  left: 50%;
+}
+
+.plank {
+  transform-style: preserve-3d;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+  backface-visibility: hidden;
+}
+.plank .plank__face {
+  border: 0.2rem solid white;
+  position: absolute;
+  background: wheat;
+  box-shadow: 0 0 0.2vh 0 wheat;
+  opacity: 1;
+  transform: translateZ(40vh);
+}
+.plank .plank__face--front, .plank .plank__face--back {
+  width: 6.6666666667vh;
+  height: 4vh;
+}
+.plank .plank__face--top, .plank .plank__face--bottom {
+  width: 6.6666666667vh;
+  height: 20vh;
+}
+.plank .plank__face--left, .plank .plank__face--right {
+  width: 20vh;
+  height: 4vh;
+}
+.plank .plank__face--front {
+  transform: rotateY(0deg) translateZ(10vh);
+}
+.plank .plank__face--back {
+  transform: rotateY(180deg) translateZ(10vh);
+}
+.plank .plank__face--top {
+  transform: rotateX(90deg) translateZ(2vh);
+}
+.plank .plank__face--bottom {
+  transform: rotateX(-90deg) translateZ(2vh);
+}
+.plank .plank__face--left {
+  transform: rotateY(90deg) translateZ(3.3333333333vh);
+}
+.plank .plank__face--right {
+  transform: rotateY(-90deg) translateZ(3.3333333333vh);
+}
+
+.orientation-01.pos-01 {
+  transform: rotateX(-30deg) rotateY(-30deg) rotateZ(0) translateX(-6.6666666667vh);
+}
+.orientation-01.pos-02 {
+  transform: rotateX(-30deg) rotateY(-30deg) rotateZ(0) translateX(0rem);
+}
+.orientation-01.pos-03 {
+  transform: rotateX(-30deg) rotateY(-30deg) rotateZ(0) translateX(6.6666666667vh);
+}
+
+.orientation-02.pos-01 {
+  transform: rotateX(-30deg) rotateY(60deg) rotateZ(0) translateX(6.6666666667vh);
+}
+.orientation-02.pos-02 {
+  transform: rotateX(-30deg) rotateY(60deg) rotateZ(0) translateX(0rem);
+}
+.orientation-02.pos-03 {
+  transform: rotateX(-30deg) rotateY(60deg) rotateZ(0) translateX(-6.6666666667vh);
+}
+
+#actionsDisplay {
+  color: white;
+}
+
+.action {
+  display: none;
+}
+
+button {
+  color: var(--color);
+  transition: 0.25s;
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+button:hover, button:focus {
+  border-color: var(--hover);
+  color: var(--hover);
+}
+
+.generate {
+  --color: #ffa260;
+  --hover: #e5ff60;
+}
+.restart {
+  --color: #a972cb;
+  --hover: #cb72aa;
+}
+
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
