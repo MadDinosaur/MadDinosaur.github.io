@@ -1,4 +1,6 @@
 //--Jenga actions--//
+var difficulty = ["easy", "normal", "hard"];
+var difficultySelect = 0;
 var actions;
 displayActionScreen();
 
@@ -16,9 +18,36 @@ function displayAction() {
 
 function getActions() {
   var arr = [];
-  const query = document.querySelectorAll('.action');
+  var selectedDifficulty = difficulty[difficultySelect];
+  const query = document.querySelectorAll('.'+selectedDifficulty+'-mode');
   for (let i=0; i<query.length;i++) {
     arr[i] = query[i].outerText;
   }
   return arr;
+}
+
+function selectDifficulty(orientation) {
+  document.getElementById(difficulty[difficultySelect]).style.display = "none";
+  document.getElementById("play-btn").classList.remove(difficulty[difficultySelect]+'-play');
+
+  difficultySelect += orientation;
+  console.log(difficulty[difficultySelect]);
+  if(difficultySelect >= difficulty.length) difficultySelect = 0;
+  else if (difficultySelect < 0) difficultySelect = difficulty.length - 1;
+
+  document.getElementById("game-mode").innerText = difficulty[difficultySelect].toUpperCase();
+  document.getElementById(difficulty[difficultySelect]).style.display = "block";
+  
+  document.getElementById("play-btn").classList.add(difficulty[difficultySelect]+'-play');
+}
+
+function chooseDifficulty() {
+  document.getElementById("gameSelect").style.display = "none";
+  document.getElementById("actionsDisplay").style.display = "inline";
+  displayActionScreen();
+}
+
+function changeDifficulty() {
+  document.getElementById("gameSelect").style.display = "inline";
+  document.getElementById("actionsDisplay").style.display = "none";
 }

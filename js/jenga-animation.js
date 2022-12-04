@@ -1,6 +1,7 @@
 //--Jenga animation--//
 const isMobile = navigator.userAgentData.mobile;
 if (isMobile) {
+  console.log('mobite interface');
     const jenga = document.getElementById('jenga')
     const length = '20vh' // it has to be equal to $l SCSS var
     let i = 1
@@ -41,6 +42,7 @@ if (isMobile) {
         el.addEventListener('touchstart', dragMouseDown)
       })
       function dragMouseDown(event) {
+        console.log('touch start');
         var touch = event.touches[0] || event.changedTouches[0];
             _x = touch.pageX;
             _y = touch.pageY;

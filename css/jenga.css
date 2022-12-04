@@ -37,6 +37,7 @@ body {
   transition: all 0.5s ease-in-out;
   backface-visibility: hidden;
 }
+
 .plank .plank__face {
   border: 0.2rem solid white;
   position: absolute;
@@ -45,33 +46,45 @@ body {
   opacity: 1;
   transform: translateZ(40vh);
 }
-.plank .plank__face--front, .plank .plank__face--back {
+
+.plank .plank__face--front,
+.plank .plank__face--back {
   width: 6.6666666667vh;
   height: 4vh;
 }
-.plank .plank__face--top, .plank .plank__face--bottom {
+
+.plank .plank__face--top,
+.plank .plank__face--bottom {
   width: 6.6666666667vh;
   height: 20vh;
 }
-.plank .plank__face--left, .plank .plank__face--right {
+
+.plank .plank__face--left,
+.plank .plank__face--right {
   width: 20vh;
   height: 4vh;
 }
+
 .plank .plank__face--front {
   transform: rotateY(0deg) translateZ(10vh);
 }
+
 .plank .plank__face--back {
   transform: rotateY(180deg) translateZ(10vh);
 }
+
 .plank .plank__face--top {
   transform: rotateX(90deg) translateZ(2vh);
 }
+
 .plank .plank__face--bottom {
   transform: rotateX(-90deg) translateZ(2vh);
 }
+
 .plank .plank__face--left {
   transform: rotateY(90deg) translateZ(3.3333333333vh);
 }
+
 .plank .plank__face--right {
   transform: rotateY(-90deg) translateZ(3.3333333333vh);
 }
@@ -79,9 +92,11 @@ body {
 .orientation-01.pos-01 {
   transform: rotateX(-30deg) rotateY(-30deg) rotateZ(0) translateX(-6.6666666667vh);
 }
+
 .orientation-01.pos-02 {
   transform: rotateX(-30deg) rotateY(-30deg) rotateZ(0) translateX(0rem);
 }
+
 .orientation-01.pos-03 {
   transform: rotateX(-30deg) rotateY(-30deg) rotateZ(0) translateX(6.6666666667vh);
 }
@@ -89,18 +104,67 @@ body {
 .orientation-02.pos-01 {
   transform: rotateX(-30deg) rotateY(60deg) rotateZ(0) translateX(6.6666666667vh);
 }
+
 .orientation-02.pos-02 {
   transform: rotateX(-30deg) rotateY(60deg) rotateZ(0) translateX(0rem);
 }
+
 .orientation-02.pos-03 {
   transform: rotateX(-30deg) rotateY(60deg) rotateZ(0) translateX(-6.6666666667vh);
 }
 
-#actionsDisplay {
+#actionsDisplay,
+#gameSelect {
   color: white;
+  text-align: center;
 }
 
-.action {
+#actionsDisplayText {
+  text-align: center;
+  margin-top: 40px;
+  margin-left: -35px;
+  width: 100px;
+  transform: rotate(90deg);
+  color: #0C0C0C;
+  font-size: xx-small;
+}
+
+#actionsDisplayPlank {
+  scale: 2;
+  right: 60%;
+}
+
+#game-mode {
+  font-weight: bold;
+}
+
+.game-rule {
+  display: none;
+  text-align: left;
+  vertical-align: middle;
+  width: 300px;
+  height: 300px;
+  color: white;
+  background-color: #0c0c0c8e;
+  margin-left: 15px;
+  padding: 1.5em;
+}
+
+#easy {
+  box-shadow: 0 19px 38px rgba(255, 255, 0, 0.3), 0 15px 12px rgba(255, 255, 0, 0.2);
+}
+
+#normal {
+  box-shadow: 0 19px 38px rgba(0, 255, 100, 0.3), 0 15px 12px rgba(255, 100, 0, 0.2);
+}
+
+#hard {
+  box-shadow: 0 19px 38px rgba(255, 0, 234, 0.3), 0 15px 12px rgba(255, 0, 157, 0.2);
+}
+
+.easy-mode,
+.normal-mode,
+.hard-mode {
   display: none;
 }
 
@@ -113,9 +177,12 @@ button {
   line-height: 1;
   margin: 0.5em;
   padding: 1em 2em;
+  --color: #ffffff;
+  --hover: #ffffff;
 }
 
-button:hover, button:focus {
+button:hover,
+button:focus {
   border-color: var(--hover);
   color: var(--hover);
 }
@@ -124,9 +191,34 @@ button:hover, button:focus {
   --color: #ffa260;
   --hover: #e5ff60;
 }
+
 .restart {
   --color: #a972cb;
   --hover: #cb72aa;
+}
+
+.difficulty {
+  --color: #19bc8b;
+  --hover: #1973bc;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+}
+
+.easy-play {
+  --color: #e4cb58;
+  --hover: #94e458;
+}
+
+.normal-play {
+  --color: #8fc866;
+  --hover: #66c887;
+}
+
+.hard-play {
+  --color: #ef6eae;
+  --hover: #ef8f6e;
 }
 
 .raise:hover,
