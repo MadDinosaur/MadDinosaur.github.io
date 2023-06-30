@@ -514,7 +514,7 @@ h6 .small,
 .h6 .small {
   font-weight: normal;
   line-height: 1;
-  color: #8e9699;
+  color: #b3b3cc;
 }
 
 h1,
@@ -547,6 +547,7 @@ h4 .small,
 h5 .small,
 h6 .small {
   font-size: 75%;
+  font-weight: bold;
 }
 
 h1,

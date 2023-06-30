@@ -91,7 +91,7 @@ footer {
 
 .project-title {
 	font-family: 'Pixel Fill', fantasy;
-	font-size: 30px;
+	font-size: 40px;
 }
 
 
@@ -140,7 +140,7 @@ footer {
     position: fixed;
     left: -10%;
     top: -10%;
-    z-index: 7;
+	z-index: 1;
 
     background: -webkit-repeating-linear-gradient(top,
             transparent 0px,
