@@ -3,14 +3,11 @@ var gameIsOver = false;
 // NAVIGATION WITH KEYS
 
 var currentPos = 1; //pos 0-start, 1-controls etc..
-var dialogPos = 0;
 var mainPage = true; // says if view is on the main page
 var aboutPage = false;
+var aboutDialogTriggered = false;
 var mainOptions = ["CV", "ABOUT_ME", "PROJECTS", "GITHUB", "LINKEDIN", "E-MAIL"];
 var mainHrefOptions = ["/docs/CV.pdf", null, "./projects.html", "https://github.com/MadDinosaur", "https://www.linkedin.com/in/b%C3%A1rbara-pinto-80b380192/", "mailto:bdianapinto@outlook.com"];
-var aboutDialog = ["HELLO THERE!", "I'M A PROGRAMMING STUDENT, CASUAL GAME DEVELOPER...", "..AND OCCASIONAL D&D DUNGEON MASTER.",
-    "I'M PASSIONATE ABOUT...", "MATHS",  "RETRO CONSOLES", "TECH","TRAVELLING", "AND COOKING!",
-    "PLEASE CHECK OUT MY WORK AND MY SOCIAL NETWORKS!"];
 var mainAnchorLinks = [];
 var aboutPageAnchorLinks = [];
 $(window).on('load', function () {
@@ -60,7 +57,11 @@ $(window).keydown(function (e) {
                             changeSection('main', 'ABOUT_ME');
                             mainPage = false;
                             aboutPage = true;
-                            currentPos = 0; //reset position
+                            if (!aboutDialogTriggered) {
+                                aboutDialogTriggered = true;
+                                timer = setInterval(updateTitle, 50);
+                            }
+                            aboutPageAnchorLinks[0].classList.add('flash');
                             break;
                         case 2:
                             window.location.href = "./projects.html";
@@ -73,25 +74,6 @@ $(window).keydown(function (e) {
                             break;
                         case 5:
                             window.location.href = "mailto:bdianapinto@outlook.com";
-                            break;
-                    }
-                } else if (aboutPage) {
-                    switch (currentPos) {
-                        case 0:
-                            dialogPos += 1;
-                            if (dialogPos < aboutDialog.length) {
-                                document.getElementsByClassName("typed-out")[0].remove();
-
-                                var div = document.createElement("div");
-                                div.classList.add("typed-out");
-                                div.textContent = aboutDialog[dialogPos];
-
-                                document.getElementsByClassName("bubble")[0].appendChild(div)
-                            }
-                            break;
-                        case 1:
-                            changeSection(mainOptions[currentPos], 'main');
-                            mainPage = true;
                             break;
                     }
                 } else {
@@ -126,13 +108,6 @@ function scrollUp() {
         mainAnchorLinks[1].href = mainHrefOptions[currentPos];
         mainAnchorLinks[2].text = mainOptions[next];
         mainAnchorLinks[2].href = mainHrefOptions[next];
-    } else if (aboutPage) {
-        aboutPageAnchorLinks[currentPos].classList.remove('flash');
-
-        currentPos -= 1;
-        if (currentPos < 0) currentPos = aboutPageAnchorLinks.length - 1;
-
-        aboutPageAnchorLinks[currentPos].classList.add('flash');
     }
 }
 
@@ -160,18 +135,39 @@ function scrollDown() {
         mainAnchorLinks[1].href = mainHrefOptions[currentPos];
         mainAnchorLinks[2].text = mainOptions[next];
         mainAnchorLinks[2].href = mainHrefOptions[next];
-    } else if (aboutPage) {
-        aboutPageAnchorLinks[currentPos].classList.remove('flash');
-
-        currentPos += 1;
-        if (currentPos == aboutPageAnchorLinks.length) currentPos = 0;
-
-        aboutPageAnchorLinks[currentPos].classList.add('flash');
     }
 }
 
 function changeSection(from, to) {
     document.getElementById(from).style.display = "none";
     document.getElementById(to).style.display = "initial";
+}
+
+var title = "Hello there!\n\n\n\n<br><br><br>My name is Diana.\n\n<br><br>I’m a software engineer by day and casual game developer by night.\n\n<br><br>I love learning about all things technology, participating in workshops and creating my own projects.\n\n<br><br>Please check out my work and social networks!";
+var titleLenght = title.length - 1;
+var text = "";
+var counter = 0;
+var timer;
+
+function updateTitle() {
+    if (title[counter] == '<') {
+        do {
+            text = text + title[counter];
+            counter++;
+        } while (title[counter] != '>')
+    }
+    text = text + title[counter];
+    document.getElementById("code").innerHTML = text + '<span class="blinking">_</span>';
+    if (counter >= titleLenght && counter >= 0) {
+        counter = -1;
+        clearInterval(timer);
+    } else {
+        counter++;
+    }
+
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
